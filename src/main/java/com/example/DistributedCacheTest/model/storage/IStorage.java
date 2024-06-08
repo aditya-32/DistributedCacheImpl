@@ -9,5 +9,4 @@ public interface IStorage<K,V>  {
     int getSize();
 
     V removeKey(K key);
-
 }

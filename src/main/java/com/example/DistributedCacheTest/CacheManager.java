@@ -3,6 +3,7 @@ package com.example.DistributedCacheTest;
 import com.example.DistributedCacheTest.enums.EvictionPolicyEnum;
 import com.example.DistributedCacheTest.model.eviction.EvictionPolicy;
 import com.example.DistributedCacheTest.model.eviction.FIFOEvictionPolicy;
+import com.example.DistributedCacheTest.model.eviction.LFUEvictionPolicy;
 import com.example.DistributedCacheTest.model.eviction.LRUEvictionPolicy;
 import com.example.DistributedCacheTest.model.storage.IStorage;
 import lombok.extern.slf4j.Slf4j;
@@ -41,6 +42,8 @@ public class CacheManager<K, V> {
                 return new LRUEvictionPolicy<>();
             case FIFO :
                 return new FIFOEvictionPolicy<>();
+            case LFU:
+                return new LFUEvictionPolicy<>();
             default :
                 log.error("Eviction policy supported");
         }
